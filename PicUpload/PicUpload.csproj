@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Interceptor" Version="1.0.0" />
+    <PackageReference Include="HabboInterceptor" Version="1.0.0" />
   </ItemGroup>
 
 </Project>
