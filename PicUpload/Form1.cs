@@ -434,7 +434,11 @@ namespace PicUpload
                 {
                     for (int y = startingY; y < Math.Min(startingY + 15, image.Height); y++)
                     {
-                        int color = int.Parse(ColorTranslator.ToHtml(image.GetPixel(x, y)).TrimStart('#'), NumberStyles.HexNumber);
+                        var rawColor = image.GetPixel(x, y);
+                        if (rawColor.A == 0)
+                            continue;
+
+                        int color = int.Parse(ColorTranslator.ToHtml(rawColor).TrimStart('#'), NumberStyles.HexNumber);
                         photo.Sprites.Add(new Sprite
                         {
                             Name = "pirate_mast4grp_32_b_0_0",
